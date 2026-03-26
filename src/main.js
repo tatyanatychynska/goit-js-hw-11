@@ -18,6 +18,7 @@ form.addEventListener('submit', async (event) => {
             message: 'Please add some text and click "Search"',
             color: 'blue',
         });
+        hideLoader();
         return;
     }
     try {
