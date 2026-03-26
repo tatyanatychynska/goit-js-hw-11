@@ -12,6 +12,14 @@ form.addEventListener('submit', async (event) => {
     clearGallery();
     showLoader();
     userInput = inputField.value;
+    if (userInput === '') {
+        iziToast.show({
+            title: 'Empty form',
+            message: 'Please add some text and click "Search"',
+            color: 'blue',
+        });
+        return;
+    }
     try {
     const data = await getImagesByQuery(userInput);
     if (data.total === 0) {
